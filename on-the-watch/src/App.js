@@ -9,7 +9,7 @@ function App() {
         <ThemeProvider theme = {theme}>
           <CssBaseline />
           <div className="app">
-              <main className = "app">
+              <main className = "content">
                 <Topbar />
               </main>
           </div>
