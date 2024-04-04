@@ -76,7 +76,7 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
                   ml="15px"
                 >
                   <Typography variant="h3" 
-                  color={colors.grey[100]} 
+                  color={colors.greenAccent[300]} 
                   sx={{ m: "5px 20px 5px 60px" }} 
                   fontSize={40}
                   fontWeight={'bold'}>
