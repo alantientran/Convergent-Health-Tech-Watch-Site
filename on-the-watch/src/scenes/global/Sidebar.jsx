@@ -148,7 +148,7 @@ const Sidebar = () => {
 
             <Item
               title="Clients"
-              to="/team"
+              to="/clients"
               icon={<PeopleOutlinedIcon />}
               // icon={<Diversity1Icon />}
               selected={selected}

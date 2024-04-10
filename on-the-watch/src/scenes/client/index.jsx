@@ -6,7 +6,7 @@ import Header from "../../components/Header";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-const Team = () => {
+const Clients = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const [columnWidth, setColumnWidth] = useState(150); // Initial width, adjust as needed
@@ -117,4 +117,4 @@ const Team = () => {
   );
 };
 
-export default Team;
+export default Clients;
