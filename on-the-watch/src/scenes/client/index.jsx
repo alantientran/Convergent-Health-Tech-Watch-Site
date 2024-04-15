@@ -52,8 +52,8 @@ const Clients = () => {
       ),
     },
     {
-      field: "age",
-      headerName: "Age",
+      field: "birthday",
+      headerName: "Birthday",
       type: "number",
       headerAlign:
         "left" /* setting type as number defaults to aligning right */,
