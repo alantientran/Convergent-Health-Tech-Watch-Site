@@ -7,7 +7,7 @@ import Sidebar from "./scenes/global/Sidebar";
 import Dashboard from "./scenes/dashboard";
 import Clients from "./scenes/client";
 import Bar from "./scenes/bar";
-// import Line from "./scenes/line";
+import Line from "./scenes/line";
 import Form from "./scenes/form";
 import Calendar from "./scenes/calendar";
 import Pie from "./scenes/pie";
@@ -28,7 +28,7 @@ function App() {
               <Route path="/clients" element={<Clients />} />
               <Route path="/form" element={<Form />} />
               <Route path="/bar" element={<Bar />} /> 
-              {/* <Route path="/line" element={<Line />} /> */}
+              <Route path="/line" element={<Line />} /> 
               <Route path="/calendar" element={<Calendar />} />
               <Route path="/pie" element={<Pie />} />
             </Routes>
