@@ -30,10 +30,12 @@ const Clients = () => {
         "name-column--cell" /* Allows names to be customizable by color */,
       renderCell: ({ row }) => (
         <Link
-          to={`/person/${row.id}`}
+          to={{
+            pathname: `/person/${row.id}`,
+            state: { personDetails: row }, // Pass person's details as state
+          }}
           style={{ textDecoration: "none", color: "black" }}
         >
-          {" "}
           {/* Navigate to /person/:id */}
           <Box
             width={columnWidth}

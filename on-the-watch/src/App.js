@@ -6,6 +6,7 @@ import Sidebar from "./scenes/global/Sidebar";
 //import Home from "./scenes/home"
 import Dashboard from "./scenes/dashboard";
 import Clients from "./scenes/client";
+import ClientDetails from "./scenes/ClientDetails";
 import Bar from "./scenes/bar";
 // import Line from "./scenes/line";
 import Form from "./scenes/form";
@@ -27,10 +28,12 @@ function App() {
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/clients" element={<Clients />} />
               <Route path="/form" element={<Form />} />
-              <Route path="/bar" element={<Bar />} /> 
+              <Route path="/bar" element={<Bar />} />
               {/* <Route path="/line" element={<Line />} /> */}
               <Route path="/calendar" element={<Calendar />} />
               <Route path="/pie" element={<Pie />} />
+              <Route path="/person/:id" element={<ClientDetails />} />
+              {/* Dynamic route for person details */}
             </Routes>
           </main>
         </div>
