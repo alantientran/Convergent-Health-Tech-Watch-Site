@@ -11,6 +11,7 @@ import LineChart from "../../components/LineChart";
 import BarChart from "../../components/BarChart";
 import StatBox from "../../components/StatBox";
 import ProgressCircle from "../../components/ProgressCircle";
+import './index.css'
 
 const Dashboard = () => {
   const theme = useTheme();
@@ -52,15 +53,16 @@ const Dashboard = () => {
           display="flex"
           alignItems="center"
           justifyContent="center"
-        >
+          >
           <StatBox
             title="12,361"
-            subtitle="Emails Sent"
+            subtitle="Customer Progress"
             progress="0.75"
             increase="+14%"
             icon={
               <EmailIcon
-                sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
+              sx={{ color: colors.greenAccent[300], fontSize: "26px" }}
+              className="icon"
               />
             }
           />
@@ -79,7 +81,8 @@ const Dashboard = () => {
             increase="+21%"
             icon={
               <PointOfSaleIcon
-                sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
+                sx={{ color: colors.greenAccent[300], fontSize: "26px" }}
+                className="icon"
               />
             }
           />
@@ -98,7 +101,8 @@ const Dashboard = () => {
             increase="+5%"
             icon={
               <PersonAddIcon
-                sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
+                sx={{ color: colors.greenAccent[300], fontSize: "26px" }}
+                className="icon"
               />
             }
           />
@@ -112,12 +116,13 @@ const Dashboard = () => {
         >
           <StatBox
             title="1,325,134"
-            subtitle="Traffic Received"
+            subtitle ="Traffic Received"
             progress="0.80"
             increase="+43%"
             icon={
               <TrafficIcon
-                sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
+                sx={{ color: colors.greenAccent[300], fontSize: "26px" }}
+                className="icon"
               />
             }
           />
