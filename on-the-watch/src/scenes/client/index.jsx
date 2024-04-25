@@ -34,7 +34,10 @@ const Clients = () => {
             pathname: `/person/${row.id}`,
             state: { personDetails: row }, // Pass person's details as state
           }}
-          style={{ textDecoration: "none", color: "black" }}
+          style={{
+            textDecoration: "none",
+            color: "black",
+          }}
         >
           {/* Navigate to /person/:id */}
           <Box
@@ -43,6 +46,7 @@ const Clients = () => {
             p="5px"
             display="flex"
             justifyContent="center"
+            alignItems="center"
             backgroundColor={colors.greenAccent[700]}
             borderRadius={"4px"}
           >
