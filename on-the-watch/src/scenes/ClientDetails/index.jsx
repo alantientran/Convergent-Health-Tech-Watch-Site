@@ -20,6 +20,12 @@ import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import TrafficIcon from "@mui/icons-material/Traffic";
 import { tokens } from "../../theme";
 import ProgressCircle from "../../components/ProgressCircle";
+import PersonalGoal from "../../components/PersonalGoal";
+import Weight from "../../components/Weight";
+import ContactDetails from "../../components/ContactDetails";
+import Age from "../../components/Age";
+import { Link } from "react-router-dom";
+import Pronouns from "../../components/Pronouns";
 
 const ClientDetails = () => {
   const location = useLocation();
@@ -37,309 +43,106 @@ const ClientDetails = () => {
     return <div>Loading...</div>; // Handle case where personDetails is not available yet
   }
   const firstName = personDetails.name.split(" ")[0];
+  const { phone, email, birthday } = personDetails;
 
   // Render person's details
   return (
-    // <Box m="20px">
-    //   {/* HEADER */}
-    //   <Box
-    //     display="flex"
-    //     justifyContent="space-between"
-    //     alignItems="center"
-    //     mb="30px"
-    //   >
-    //     {/* <Header title={`${firstName}'s Fitly Activity Summary`} /> */}
-    //     <Typography
-    //       variant="h2"
-    //       color={colors.grey[100]}
-    //       fontWeight="bold"
-    //       sx={{ m: "15 0 5px 0" }}
-    //     >
-    //       {`${firstName}'s Fitly Activity Summary`}
-    //     </Typography>
-    //     <Box>
-    //       <Button
-    //         sx={{
-    //           backgroundColor: colors.blueAccent[700],
-    //           color: colors.grey[100],
-    //           fontSize: "14px",
-    //           fontWeight: "bold",
-    //           padding: "10px 20px",
-    //         }}
-    //       >
-    //         <DownloadOutlinedIcon sx={{ mr: "10px" }} />
-    //         Download Fitly Report
-    //       </Button>
-    //     </Box>
-    //   </Box>
-
-    //   {/* GRID & CHARTS */}
-    //   <Box
-    //     display="grid"
-    //     gridTemplateColumns="repeat(12, 1fr)"
-    //     gridAutoRows="140px"
-    //     gap="20px"
-    //   >
-    //     {/* ROW 1 */}
-    //     <Box
-    //       gridColumn="span 4"
-    //       backgroundColor={colors.primary[400]}
-    //       display="flex"
-    //       alignItems="center"
-    //       justifyContent="center"
-    //     >
-    //       <StatBox
-    //         title="12,361"
-    //         subtitle="Calories Burned"
-    //         progress="0.75"
-    //         increase="+14%"
-    //         icon={
-    //           <EmailIcon
-    //             sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
-    //           />
-    //         }
-    //       />
-    //     </Box>
-    //     <Box
-    //       gridColumn="span 4"
-    //       backgroundColor={colors.primary[400]}
-    //       display="flex"
-    //       alignItems="center"
-    //       justifyContent="center"
-    //     >
-    //       <StatBox
-    //         title="431,225"
-    //         subtitle="Daily Steps Average"
-    //         progress="0.50"
-    //         increase="+21%"
-    //         icon={
-    //           <PointOfSaleIcon
-    //             sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
-    //           />
-    //         }
-    //       />
-    //     </Box>
-    //     <Box
-    //       gridColumn="span 4"
-    //       backgroundColor={colors.primary[400]}
-    //       display="flex"
-    //       alignItems="center"
-    //       justifyContent="center"
-    //     >
-    //       <StatBox
-    //         title="32,441"
-    //         subtitle="Workout Sessions"
-    //         progress="0.30"
-    //         increase="+5%"
-    //         icon={
-    //           <PersonAddIcon
-    //             sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
-    //           />
-    //         }
-    //       />
-    //     </Box>
-    //     {/* <Box
-    //       gridColumn="span 3"
-    //       backgroundColor={colors.primary[400]}
-    //       display="flex"
-    //       alignItems="center"
-    //       justifyContent="center"
-    //     >
-    //       <StatBox
-    //         title="1,325,134"
-    //         subtitle="Traffic Received"
-    //         progress="0.80"
-    //         increase="+43%"
-    //         icon={
-    //           <TrafficIcon
-    //             sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
-    //           />
-    //         }
-    //       />
-    //     </Box> */}
-
-    //     {/* ROW 2 */}
-    //     <Box
-    //       gridColumn="span 8"
-    //       gridRow="span 2"
-    //       backgroundColor={colors.primary[400]}
-    //     >
-    //       <Box
-    //         mt="25px"
-    //         p="0 30px"
-    //         display="flex "
-    //         justifyContent="space-between"
-    //         alignItems="center"
-    //       >
-    //         <Box>
-    //           <Typography
-    //             variant="h5"
-    //             fontWeight="600"
-    //             color={colors.grey[100]}
-    //           >
-    //             Average Calories Burned
-    //           </Typography>
-    //           <Typography
-    //             variant="h3"
-    //             fontWeight="bold"
-    //             color={colors.greenAccent[500]}
-    //           >
-    //             April 22nd to April 29th
-    //           </Typography>
-    //         </Box>
-    //         <Box>
-    //           <IconButton>
-    //             <DownloadOutlinedIcon
-    //               sx={{ fontSize: "26px", color: colors.greenAccent[500] }}
-    //             />
-    //           </IconButton>
-    //         </Box>
-    //       </Box>
-    //       <Box height="250px" m="-20px 0 0 0">
-    //         <LineChart isDashboard={true} />
-    //       </Box>
-    //     </Box>
-
-    //     {/* ROW 3 */}
-    //     <Box
-    //       gridColumn="span 4"
-    //       gridRow="span 2"
-    //       backgroundColor={colors.primary[400]}
-    //       overflow="auto"
-    //     >
-    //       <Box
-    //         display="flex"
-    //         justifyContent="space-between"
-    //         alignItems="center"
-    //         borderBottom={`4px solid ${colors.primary[500]}`}
-    //         colors={colors.grey[100]}
-    //         p="15px"
-    //       >
-    //         <Typography color={colors.grey[100]} variant="h5" fontWeight="600">
-    //           Recent Workouts
-    //         </Typography>
-    //       </Box>
-    //       {mockTransactions.map((transaction, i) => (
-    //         <Box
-    //           key={`${transaction.txId}-${i}`}
-    //           display="flex"
-    //           justifyContent="space-between"
-    //           alignItems="center"
-    //           borderBottom={`4px solid ${colors.primary[500]}`}
-    //           p="15px"
-    //         >
-    //           <Box>
-    //             <Typography
-    //               color={colors.greenAccent[500]}
-    //               variant="h5"
-    //               fontWeight="600"
-    //             >
-    //               {transaction.txId}
-    //             </Typography>
-    //             <Typography color={colors.grey[100]}>
-    //               {transaction.user}
-    //             </Typography>
-    //           </Box>
-    //           <Box color={colors.grey[100]}>{transaction.date}</Box>
-    //           <Box
-    //             backgroundColor={colors.greenAccent[500]}
-    //             p="5px 10px"
-    //             borderRadius="4px"
-    //           >
-    //             ${transaction.cost}
-    //           </Box>
-    //         </Box>
-    //       ))}
-    //     </Box>
-    //     <Box
-    //       gridColumn="span 8"
-    //       gridRow="span 2"
-    //       backgroundColor={colors.primary[400]}
-    //       p="30px"
-    //     >
-    //       <Typography variant="h5" fontWeight="600">
-    //         Assign {firstName}'s Next Workout
-    //       </Typography>
-    //     </Box>
-    //     <Box
-    //       gridColumn="span 4"
-    //       gridRow="span 2"
-    //       backgroundColor={colors.primary[400]}
-    //     >
-    //       <Typography
-    //         variant="h5"
-    //         fontWeight="600"
-    //         sx={{ padding: "30px 30px 0 30px" }}
-    //       >
-    //         Sales Quantity
-    //       </Typography>
-    //       <Box height="250px" mt="-20px">
-    //         <BarChart isDashboard={true} />
-    //       </Box>
-    //     </Box>
-    //   </Box>
-    // </Box>
-    // <Box m="20px">
-    //   <Box
-    //     display="grid"
-    //     gridTemplateColumns="repeat(12, 1fr)"
-    //     gridAutoRows="140px"
-    //     gap="20px"
-    //   >
-    //     {" "}
-    //     {/* First row */}
-    //     <Box
-    //       gridColumn="span 3"
-    //       backgroundColor={colors.primary[400]}
-    //       display="flex"
-    //       alignItems="center"
-    //       justifyContent="center"
-    //     >
-    //       <StatBox
-    //         title="12,361"
-    //         subtitle="Emails Sent"
-    //         progress="0.75"
-    //         increase="+14%"
-    //         icon={
-    //           <EmailIcon
-    //             sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
-    //           />
-    //         }
-    //       />
-    //     </Box>
-    //   </Box>
-    // </Box>
-    <Box sx={{ flexGrow: 1, height: "100vh" }}>
-      <Grid container spacing={2} style={{ height: "100%" }}>
-        <Grid item xs={3}>
-          {/* Content for the first column */}
-          <Box sx={{ backgroundColor: "lightblue", height: "100%" }}>
-            <StatBox
-              title="12,361"
-              subtitle="Emails Sent"
-              progress="0.75"
-              increase="+14%"
-              icon={
-                <EmailIcon
-                  sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
-                />
-              }
+    <Box
+      display="grid"
+      gridTemplateColumns="repeat(12, 1fr)"
+      gridAutoRows="140px"
+      gap="10px"
+      height="100vh" // Set height to 100vh
+      sx={{ marginLeft: "30px" }}
+    >
+      {/* Return button to clients page */}
+      {/* <Box gridColumn="span 3">
+        <Link to="/clients">
+          <Button variant="contained">Return to Clients</Button>
+        </Link>
+      </Box> */}
+      {/* ROW 1 */}
+      <Box gridColumn="span 3">
+        {/* Content for the first column */}
+        <Box
+          // backgroundColor={colors.primary[400]}
+          display="flex"
+          flexDirection="column" // Stack StatBox components on top of each other
+          alignItems="center"
+          justifyContent="center"
+          sx={{ padding: "10px" }} // Add some padding to the box
+        >
+          <Box sx={{ marginBottom: "30px" }}>
+            <PersonalGoal
+              name={firstName}
+              goal="My goal is to achieve a healthier lifestyle by going to the gym regularly and maintaining a balanced diet. I aim to improve my overall fitness level and build strength, allowing me to lead a more active and fulfilling life."
             />
           </Box>
-        </Grid>
-        <Grid item xs={6}>
-          {/* Content for the second column */}
-          <Box sx={{ backgroundColor: "lightgreen", height: "100%" }}>
-            Second Column
+          <Box
+            sx={{
+              marginBottom: "30px",
+              width: "100%",
+              display: "grid",
+              gridTemplateColumns: "repeat(12, 1fr)",
+              gap: "20px",
+            }}
+          >
+            <Box gridColumn="span 6">
+              <Pronouns />
+            </Box>
+            <Box gridColumn="span 6">
+              <Age birthday={birthday} />
+            </Box>
           </Box>
-        </Grid>
-        <Grid item xs={3}>
+          <Box sx={{ marginBottom: "30px", width: "100%" }}>
+            <Weight start_weight={164} cur_weight={158} />
+          </Box>
+
+          <Box sx={{ marginBottom: "30px", width: "100%" }}>
+            <ContactDetails name={firstName} email={email} phone={phone} />{" "}
+          </Box>
+          {/* <Box
+          sx={{
+            marginBottom: "30px",
+            width: "100%",
+            display: "grid",
+            gridTemplateColumns: "repeat(12, 1fr)",
+            gap: "20px",
+          }}
+          >
+          <Box gridColumn="span 6">
+          <Pronouns />
+          </Box>
+          <Box gridColumn="span 1">
+          <Age birthday={birthday} />
+          </Box>
+        </Box> */}
+
           {/* Content for the third column */}
-          <Box sx={{ backgroundColor: "lightcoral", height: "100%" }}>
-            Third Column
-          </Box>
-        </Grid>
-      </Grid>
+        </Box>
+      </Box>
+      <Box gridColumn="span 6">
+        {/* Content for the second column */}
+        <Box
+          // backgroundColor={colors.primary[400]}
+          display="flex"
+          flexDirection="column" // Stack StatBox components on top of each other
+          alignItems="center"
+          justifyContent="center"
+          sx={{ padding: "10px" }} // Add some padding to the box
+        ></Box>
+      </Box>
+      <Box gridColumn="span 3">
+        {/* Content for the third column */}
+        <Box
+          // backgroundColor={colors.primary[400]}
+          display="flex"
+          flexDirection="column" // Stack StatBox components on top of each other
+          alignItems="center"
+          justifyContent="center"
+          sx={{ padding: "10px" }} // Add some padding to the box
+        ></Box>
+      </Box>
     </Box>
   );
 };

@@ -32,21 +32,26 @@ const Clients = () => {
         <Link
           to={{
             pathname: `/person/${row.id}`,
-            state: { personDetails: row }, // Pass person's details as state
+            state: {
+              personDetails: row,
+              phone: row.phone,
+              birthday: row.birthday,
+            }, // Pass person's details as state
           }}
           style={{
             textDecoration: "none",
             color: "black",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "flex-start",
+            height: "100%",
           }}
         >
           {/* Navigate to /person/:id */}
           <Box
             width={columnWidth}
-            m="0 auto"
             p="5px"
-            display="flex"
-            justifyContent="center"
-            alignItems="center"
+            textAlign={"center"}
             backgroundColor={colors.greenAccent[700]}
             borderRadius={"4px"}
           >

@@ -24,12 +24,12 @@ function App() {
           <main className="content">
             <Topbar />
             <Routes>
-              {/* <Route path="/" element={<Home />} /> */}
+              <Route path="/" element={<Dashboard />} />
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/clients" element={<Clients />} />
               <Route path="/form" element={<Form />} />
-              <Route path="/bar" element={<Bar />} /> 
-              <Route path="/line" element={<Line />} /> 
+              <Route path="/bar" element={<Bar />} />
+              <Route path="/line" element={<Line />} />
               <Route path="/calendar" element={<Calendar />} />
               <Route path="/pie" element={<Pie />} />
               <Route path="/person/:id" element={<ClientDetails />} />
