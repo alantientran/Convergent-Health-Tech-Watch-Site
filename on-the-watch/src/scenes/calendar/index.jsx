@@ -66,23 +66,56 @@ const Calendar = () => {
     <Box margin="0px">
       {/* <Header title="CALENDAR" /> */}
       {/* <Header title="CALENDAR" subtitle="Full Calendar Interactive Page" /> */}
-      <Box display="flex" justifyContent="space-between">
+      <Box display="flex" flexDirection = "column" justifyContent="space-between">
+        {/* CALENDAR */}
+        <Box flex="1 1 100%" ml="15px">
+          <FullCalendar
+            height="49vh"
+            plugins={[
+              dayGridPlugin,
+              timeGridPlugin,
+              interactionPlugin,
+              listPlugin,
+            ]}
+            headerToolbar={{
+              left: "prev,next today",
+              center: "title",
+              right: "dayGridMonth,timeGridWeek,timeGridDay,listMonth",
+            }}
+            initialView="dayGridWeek"
+            editable={true}
+            selectable={true}
+            selectMirror={true}
+            dayMaxEvents={true}
+            select={handleDateClick}
+            eventClick={handleEventClick}
+            events={currentEvents}
+          />
+        </Box>
         {/* CALENDAR SIDEBAR */}
         <Box
           flex="1 1 20%"
           backgroundColor={colors.primary[400]}
           p="15px"
           borderRadius="4px"
+          marginTop={"30px"}
+          marginLeft={"13px"}
+          
         >
           <Typography variant="h5">Events</Typography>
-          <List>
+          <List
+            sx={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fill, minmax(100px, 1fr))', // Create grid columns with a minimum width of 150px
+              gap: '5px', // Adjust gap between items
+            }}
+          >
             {currentEvents.map((event) => (
               <ListItem
                 key={event.id}
                 sx={{
                   backgroundColor: colors.greenAccent[500],
-                  margin: "10px 0",
-                  borderRadius: "2px",
+                  borderRadius: "4px",
                 }}
               >
                 <ListItemText
@@ -100,31 +133,6 @@ const Calendar = () => {
               </ListItem>
             ))}
           </List>
-        </Box>
-        {/* CALENDAR */}
-        <Box flex="1 1 100%" ml="15px">
-          <FullCalendar
-            height="75vh"
-            plugins={[
-              dayGridPlugin,
-              timeGridPlugin,
-              interactionPlugin,
-              listPlugin,
-            ]}
-            headerToolbar={{
-              left: "prev,next today",
-              center: "title",
-              right: "dayGridMonth,timeGridWeek,timeGridDay,listMonth",
-            }}
-            initialView="dayGridMonth"
-            editable={true}
-            selectable={true}
-            selectMirror={true}
-            dayMaxEvents={true}
-            select={handleDateClick}
-            eventClick={handleEventClick}
-            events={currentEvents}
-          />
         </Box>
       </Box>
     </Box>

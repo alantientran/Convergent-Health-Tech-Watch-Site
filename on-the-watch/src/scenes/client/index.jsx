@@ -53,7 +53,7 @@ const Clients = () => {
             p="5px"
             textAlign={"center"}
             backgroundColor={colors.greenAccent[700]}
-            borderRadius={"4px"}
+            borderRadius={"0px"}
           >
             <Typography colors={colors.grey[100]} sx={{ ml: "5px" }}>
               {row.name}

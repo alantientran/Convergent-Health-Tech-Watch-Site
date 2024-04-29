@@ -25,7 +25,7 @@ const Pronouns = ({ birthday }) => {
         Prounouns
       </Typography>
       <Typography variant="body1" sx={{ color: colors.grey[100] }}>
-        They/Them
+        He/Him
       </Typography>
     </Box>
   );

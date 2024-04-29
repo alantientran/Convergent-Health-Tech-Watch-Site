@@ -19,7 +19,10 @@ import ContactDetails from "../../components/ContactDetails";
 import Age from "../../components/Age";
 import Pronouns from "../../components/Pronouns";
 import Calendar from "../calendar";
-
+import BedIcon from '@mui/icons-material/Bed';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import DirectionsWalkIcon from '@mui/icons-material/DirectionsWalk';
+import LocalFireDepartmentIcon from '@mui/icons-material/LocalFireDepartment';
 
 const ClientDetails = () => {
   const location = useLocation();
@@ -38,6 +41,7 @@ const ClientDetails = () => {
   }
   const firstName = personDetails.name.split(" ")[0];
   const { phone, email, birthday } = personDetails;
+  
 
   // Render person's details
   return (
@@ -147,19 +151,92 @@ const ClientDetails = () => {
                 width: "100%",
                 display: "grid",
                 gridTemplateColumns: "repeat(12, 1fr)",
-                gap: "20px",
+                gap: "10px",
                 maxHeight: "585px",
                 overflowY: "auto",
+                "&::-webkit-scrollbar": {
+                  width: "10px",
+                  backgroundColor: "#f1f1f1", // Change background color of the scrollbar track
+                },
+                "&::-webkit-scrollbar-thumb": {
+                  backgroundColor: "#DDD", // Change color of the scrollbar thumb
+                  borderRadius: "10px", // Optional: add border-radius to the scrollbar thumb
+                },
+                "&::-webkit-scrollbar-thumb:hover": {
+                  backgroundColor: "#CCC", // Change color of the scrollbar thumb on hover
+                },
+                "&::-webkit-scrollbar-track:hover": {
+                  width: "10px",
+                  backgroundColor: "#EEE", // Change background color of the scrollbar track
+                },
               }}
             >
               <Box gridColumn="span 12">
                 <StatBox
-                  title="12,361"
-                  subtitle="Emails Sent"
+                  title="68 BPM"
+                  subtitle= {
+                    <span>
+                      Average Heart <br /> Rate
+                    </span>
+                  }
                   progress="0.75"
                   increase="+14%"
                   icon={
-                    <EmailIcon
+                    <FavoriteIcon
+                      sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
+                    />
+                  }
+                  sx={{
+                    backgroundColor: colors.primary[400],
+                    width: "100%",
+                    margin: "0 15px", // Adjust margin as per your design
+                  }}
+                />
+              </Box>
+              <Box gridColumn="span 12">
+                <StatBox
+                  title="5,610 Steps"
+                  subtitle="Today's Steps"
+                  progress="0.56"
+                  increase="+14%"
+                  icon={
+                    <DirectionsWalkIcon
+                      sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
+                    />
+                  }
+                  sx={{
+                    backgroundColor: colors.primary[400],
+                    width: "100%",
+                    margin: "0 15px", // Adjust margin as per your design
+                  }}
+                />
+              </Box>
+              <Box gridColumn="span 12">
+                <StatBox
+                  title="7 hr 35 min"
+                  subtitle="Hours Slept"
+                  progress="0.75"
+                  increase="+14%"
+                  icon={
+                    <BedIcon
+                      sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
+                    />
+                  }
+                  sx={{
+                    backgroundColor: colors.primary[400],
+                    width: "100%",
+                    margin: "0 15px", // Adjust margin as per your design
+                  }}
+                />
+              </Box>
+              <Box gridColumn="span 12">
+                <StatBox
+                  title="353 Calories"
+                  subtitle="Calories Burned"
+                  progress="0.8825"
+                  increase="+14%"
+                  icon={
+                    <LocalFireDepartmentIcon
                       sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
                     />
                   }
@@ -173,61 +250,7 @@ const ClientDetails = () => {
               <Box gridColumn="span 12">
                 <StatBox
                   title="12,361"
-                  subtitle="Emails Sent"
-                  progress="0.75"
-                  increase="+14%"
-                  icon={
-                    <EmailIcon
-                      sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
-                    />
-                  }
-                  sx={{
-                    backgroundColor: colors.primary[400],
-                    width: "100%",
-                    margin: "0 15px", // Adjust margin as per your design
-                  }}
-                />
-              </Box>
-              <Box gridColumn="span 12">
-                <StatBox
-                  title="12,361"
-                  subtitle="Emails Sent"
-                  progress="0.75"
-                  increase="+14%"
-                  icon={
-                    <EmailIcon
-                      sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
-                    />
-                  }
-                  sx={{
-                    backgroundColor: colors.primary[400],
-                    width: "100%",
-                    margin: "0 15px", // Adjust margin as per your design
-                  }}
-                />
-              </Box>
-              <Box gridColumn="span 12">
-                <StatBox
-                  title="12,361"
-                  subtitle="Emails Sent"
-                  progress="0.75"
-                  increase="+14%"
-                  icon={
-                    <EmailIcon
-                      sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
-                    />
-                  }
-                  sx={{
-                    backgroundColor: colors.primary[400],
-                    width: "100%",
-                    margin: "0 15px", // Adjust margin as per your design
-                  }}
-                />
-              </Box>
-              <Box gridColumn="span 12">
-                <StatBox
-                  title="12,361"
-                  subtitle="Emails Sent"
+                  subtitle="Daily Average Steps"
                   progress="0.75"
                   increase="+14%"
                   icon={

@@ -4,7 +4,7 @@ import { Box, IconButton, Typography, useTheme } from "@mui/material";
 import { Link } from "react-router-dom";
 import "react-pro-sidebar/dist/css/styles.css";
 import { tokens } from "../../theme";
-import userIcon from "./user.png";
+import userIcon from "./AJ-Convergent.png";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import PeopleOutlinedIcon from "@mui/icons-material/PeopleOutlined";
 import FitnessCenterIcon from "@mui/icons-material/FitnessCenter";
@@ -98,12 +98,12 @@ const Sidebar = () => {
           </MenuItem>
 
           {!isCollapsed && (
-            <Box mb="25px">
+            <Box mb="10px">
               <Box display="flex" justifyContent="center" alignItems="center">
                 <img
                   alt="profile-user"
                   width="150px"
-                  height="90px"
+                  height="150px"
                   src={userIcon}
                   style={{ cursor: "pointer", borderRadius: "50%" }}
                 />
@@ -116,14 +116,14 @@ const Sidebar = () => {
                   sx={{ m: "10px 0 0 0" }}
                   fontSize={30}
                 >
-                  John Smith
+                  Aadit Jha
                 </Typography>
                 <Typography
                   variant="h4"
                   color={colors.greenAccent[300]}
                   fontWeight={"bold"}
                 >
-                  Fitness Trainer
+                  Client
                 </Typography>
               </Box>
             </Box>
@@ -138,13 +138,6 @@ const Sidebar = () => {
               setSelected={setSelected}
             />
 
-            {/* <Typography
-              fontSize={23}
-              color={colors.grey[300]}
-              sx={{ m: "15px 0 5px 20px" }}
-            >
-              Data
-            </Typography> */}
 
             <Item
               title="Clients"
