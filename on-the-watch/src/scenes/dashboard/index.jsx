@@ -12,6 +12,7 @@ import BarChart from "../../components/BarChart";
 import StatBox from "../../components/StatBox";
 import ProgressCircle from "../../components/ProgressCircle";
 import './index.css'
+import Scheduled from "../../components/Scheduled";
 
 const Dashboard = () => {
   const theme = useTheme();
@@ -20,7 +21,7 @@ const Dashboard = () => {
   return (
     <Box m="20px">
       {/* HEADER */}
-      <Box display="flex" justifyContent="space-between" alignItems="center">
+      <Box display="flex" justifyContent="space-between" alignItems="center" marginBottom="0px">
         <Header title="DASHBOARD" subtitle="Welcome to your dashboard" />
 
         <Box>
@@ -44,7 +45,7 @@ const Dashboard = () => {
         display="grid"
         gridTemplateColumns="repeat(12, 1fr)"
         gridAutoRows="140px"
-        gap="20px"
+        gap="10px"
       >
         {/* ROW 1 */}
         <Box
@@ -218,6 +219,48 @@ const Dashboard = () => {
               </Box>
             </Box>
           ))} 
+        </Box>
+        {/* ROW 3 */}
+        <Box
+          gridColumn="span 12"
+          gridRow="span 1"
+          backgroundColor={colors.primary[400]}
+          overflow="auto"
+        >
+          <Box
+            display="flex"
+            justifyContent="space-between"
+            alignItems="center"
+            colors={colors.grey[100]}
+            p="15px"
+          >
+            <Typography color={colors.grey[100]} variant="h5" fontWeight="600">
+              Scheduled
+            </Typography>
+            
+          </Box>
+          <Box gridColumn="span 4"
+            backgroundColor={colors.primary[400]}
+            display="flex"
+            //alignItems="center"
+            justifyContent="left"
+            marginLeft="10px"
+            >
+            <Scheduled />
+          <Box>
+          <Box gridColumn="span 3"
+            backgroundColor={colors.primary[400]}
+            display="flex"
+            //alignItems="center"
+            justifyContent="left"
+            marginLeft="10px">
+              <Scheduled />
+          </Box>
+          
+              
+            </Box>
+          </Box>
+          
         </Box>
       </Box>
     </Box>
