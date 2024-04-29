@@ -62,8 +62,8 @@ const ClientDetails = () => {
         gridTemplateColumns="repeat(12, 1fr)"
         gridAutoRows="140px"
         gap="10px"
-        height="100vh" // Set height to 100vh
-        sx={{ marginLeft: "25px", overflowY: "hidden" }}
+        height="88vh"
+        sx={{ marginLeft: "25px" }}
       >
         {/* Return button to clients page */}
         {/* <Box gridColumn="span 3">

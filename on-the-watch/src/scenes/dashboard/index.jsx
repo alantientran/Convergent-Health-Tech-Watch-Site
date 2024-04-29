@@ -2,17 +2,16 @@ import { Box, Button, IconButton, Typography, useTheme } from "@mui/material";
 import { tokens } from "../../theme";
 import { mockTransactions } from "../../data/mockData";
 import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
-import EmailIcon from "@mui/icons-material/Email";
-import PointOfSaleIcon from "@mui/icons-material/PointOfSale";
+import MarkEmailUnreadIcon from "@mui/icons-material/MarkEmailUnread";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import TrafficIcon from "@mui/icons-material/Traffic";
 import Header from "../../components/Header";
-import LineChart from "../../components/LineChart";
 import BarChart from "../../components/BarChart";
 import StatBox from "../../components/StatBox";
-import ProgressCircle from "../../components/ProgressCircle";
 import "./index.css";
 import Scheduled from "../../components/Scheduled";
+import ChecklistIcon from "@mui/icons-material/Checklist";
+import AlignVerticalBottomIcon from "@mui/icons-material/AlignVerticalBottom";
 
 const Dashboard = () => {
   const theme = useTheme();
@@ -27,7 +26,7 @@ const Dashboard = () => {
         alignItems="center"
         marginBottom="0px"
       >
-        <Header title="DASHBOARD" subtitle="Welcome to your dashboard" />
+        <Header title="DASHBOARD" subtitle="Logistical Overview" />
 
         <Box>
           <Button
@@ -45,14 +44,34 @@ const Dashboard = () => {
         </Box>
       </Box>
 
-      {/* GRID & CHARTS */}
+      {/* STATS CHARTS */}
       <Box
         display="grid"
         gridTemplateColumns="repeat(12, 1fr)"
         gridAutoRows="140px"
-        gap="10px"
+        gap="15px"
       >
         {/* ROW 1 */}
+        <Box
+          gridColumn="span 3"
+          backgroundColor={colors.primary[400]}
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+        >
+          <StatBox
+            title="130"
+            subtitle="Inbox"
+            progress="0.80"
+            increase="+43%"
+            icon={
+              <MarkEmailUnreadIcon
+                sx={{ color: colors.greenAccent[300], fontSize: "26px" }}
+                className="icon"
+              />
+            }
+          />
+        </Box>
         <Box
           gridColumn="span 3"
           backgroundColor={colors.primary[400]}
@@ -66,7 +85,7 @@ const Dashboard = () => {
             progress="0.75"
             increase="+14%"
             icon={
-              <TrafficIcon
+              <AlignVerticalBottomIcon
                 sx={{ color: colors.greenAccent[300], fontSize: "26px" }}
                 className="icon"
               />
@@ -86,7 +105,7 @@ const Dashboard = () => {
             progress="0.50"
             increase="+21%"
             icon={
-              <PointOfSaleIcon
+              <ChecklistIcon
                 sx={{ color: colors.greenAccent[300], fontSize: "26px" }}
                 className="icon"
               />
@@ -113,26 +132,6 @@ const Dashboard = () => {
             }
           />
         </Box>
-        <Box
-          gridColumn="span 3"
-          backgroundColor={colors.primary[400]}
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-        >
-          <StatBox
-            title="130"
-            subtitle="Inbox"
-            progress="0.80"
-            increase="+43%"
-            icon={
-              <EmailIcon
-                sx={{ color: colors.greenAccent[300], fontSize: "26px" }}
-                className="icon"
-              />
-            }
-          />
-        </Box>
 
         {/* ROW 2 */}
         <Box
@@ -153,7 +152,7 @@ const Dashboard = () => {
                 fontWeight="600"
                 color={colors.grey[100]}
               >
-                Number of Logged Workouts
+                Number of Tracked Client Workouts
               </Typography>
               <Typography
                 variant="h3"

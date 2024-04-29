@@ -12,8 +12,7 @@ import CalendarTodayOutlinedIcon from "@mui/icons-material/CalendarTodayOutlined
 import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
 import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
-import ReceiptOutlinedIcon from "@mui/icons-material/ReceiptOutlined";
-import Diversity1Icon from "@mui/icons-material/Diversity1";
+import darklogo from "./darklogo.png";
 
 /* Future consideration: allow trainers to pass their clients on to other trainers */
 
@@ -81,7 +80,13 @@ const Sidebar = () => {
                 alignItems="center"
                 ml="15px"
               >
-                <Typography
+                <img
+                  src={darklogo}
+                  width={150}
+                  height={90}
+                  style={{ marginBottom: "10px" }}
+                />
+                {/* <Typography
                   variant="h3"
                   color={colors.greenAccent[300]}
                   sx={{ m: "5px 20px 5px 60px" }}
@@ -89,7 +94,7 @@ const Sidebar = () => {
                   fontWeight={"bold"}
                 >
                   Fitly
-                </Typography>
+                </Typography> */}
                 <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
                   <MenuOutlinedIcon />
                 </IconButton>
