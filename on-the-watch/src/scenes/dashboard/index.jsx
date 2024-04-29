@@ -214,7 +214,7 @@ const Dashboard = () => {
                 p="5px 10px"
                 borderRadius="4px"
               >
-                ${transaction.cost}
+                {transaction.cost}
               </Box>
             </Box>
           ))} 
