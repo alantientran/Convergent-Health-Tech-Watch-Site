@@ -9,15 +9,8 @@ import {
   useTheme,
 } from "@mui/material";
 import StatBox from "../../components/StatBox";
-import LineChart from "../../components/LineChart";
-import BarChart from "../../components/BarChart";
-import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
-import Header from "../../components/Header";
 import { mockTransactions } from "../../data/mockData";
 import EmailIcon from "@mui/icons-material/Email";
-import PointOfSaleIcon from "@mui/icons-material/PointOfSale";
-import PersonAddIcon from "@mui/icons-material/PersonAdd";
-import TrafficIcon from "@mui/icons-material/Traffic";
 import { tokens } from "../../theme";
 import ProgressCircle from "../../components/ProgressCircle";
 import PersonalGoal from "../../components/PersonalGoal";
@@ -26,7 +19,7 @@ import ContactDetails from "../../components/ContactDetails";
 import Age from "../../components/Age";
 import Pronouns from "../../components/Pronouns";
 import Calendar from "../calendar";
-import { Line } from "@nivo/line";
+
 
 const ClientDetails = () => {
   const location = useLocation();
@@ -67,7 +60,7 @@ const ClientDetails = () => {
         gridAutoRows="140px"
         gap="10px"
         height="100vh" // Set height to 100vh
-        sx={{ marginLeft: "25px", overflowY: "hidden" }}
+        sx={{ marginLeft: "25px" }}
       >
         {/* Return button to clients page */}
         {/* <Box gridColumn="span 3">
@@ -128,7 +121,7 @@ const ClientDetails = () => {
             </Box>
           </Box>
         </Box>
-        <Box gridColumn="span 4">
+        <Box gridColumn="span 3">
           {/* Content for the second column */}
           <Box
             // backgroundColor={colors.primary[400]}
@@ -155,9 +148,11 @@ const ClientDetails = () => {
                 display: "grid",
                 gridTemplateColumns: "repeat(12, 1fr)",
                 gap: "20px",
+                maxHeight: "585px",
+                overflowY: "auto",
               }}
             >
-              <Box gridColumn="span 6">
+              <Box gridColumn="span 12">
                 <StatBox
                   title="12,361"
                   subtitle="Emails Sent"
@@ -175,7 +170,7 @@ const ClientDetails = () => {
                   }}
                 />
               </Box>
-              <Box gridColumn="span 6">
+              <Box gridColumn="span 12">
                 <StatBox
                   title="12,361"
                   subtitle="Emails Sent"
@@ -193,7 +188,7 @@ const ClientDetails = () => {
                   }}
                 />
               </Box>
-              <Box gridColumn="span 6">
+              <Box gridColumn="span 12">
                 <StatBox
                   title="12,361"
                   subtitle="Emails Sent"
@@ -211,7 +206,7 @@ const ClientDetails = () => {
                   }}
                 />
               </Box>
-              <Box gridColumn="span 6">
+              <Box gridColumn="span 12">
                 <StatBox
                   title="12,361"
                   subtitle="Emails Sent"
@@ -229,7 +224,7 @@ const ClientDetails = () => {
                   }}
                 />
               </Box>
-              <Box gridColumn="span 6">
+              <Box gridColumn="span 12">
                 <StatBox
                   title="12,361"
                   subtitle="Emails Sent"
@@ -250,7 +245,7 @@ const ClientDetails = () => {
             </Box>
           </Box>
         </Box>
-        <Box gridColumn="span 5">
+        <Box gridColumn="span 6">
           {/* Content for the third column */}
           <Box
             // backgroundColor={colors.primary[400]}
