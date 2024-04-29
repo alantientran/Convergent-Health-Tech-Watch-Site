@@ -275,7 +275,7 @@ export const mockTransactions = [
   },
   {
     // txId: "0315dsaa",
-    user: "Meghana Chinta",
+    user: "Meghana C",
     date: "2024-04-27",
     cost: "605 Calories",
   },
@@ -320,7 +320,7 @@ export const mockTransactions = [
 export const mockBarData = [
   {
     country: "Meghana C",
-    "HIIT": 137,
+    HIIT: 137,
     "hot dogColor": "hsl(229, 70%, 50%)",
     "Weight Training": 96,
     burgerColor: "hsl(296, 70%, 50%)",
@@ -331,9 +331,9 @@ export const mockBarData = [
   },
   {
     country: "Alan T",
-    "HIIT": 55,
+    HIIT: 55,
     "hot dogColor": "hsl(307, 70%, 50%)",
-    "Weight Training":28,
+    "Weight Training": 28,
     burgerColor: "hsl(111, 70%, 50%)",
     Pilates: 58,
     kebabColor: "hsl(273, 70%, 50%)",
@@ -342,9 +342,9 @@ export const mockBarData = [
   },
   {
     country: "Samuel J",
-    "HIIT": 109,
+    HIIT: 109,
     "hot dogColor": "hsl(72, 70%, 50%)",
-    "Weight Training":23,
+    "Weight Training": 23,
     burgerColor: "hsl(96, 70%, 50%)",
     Pilates: 34,
     kebabColor: "hsl(106, 70%, 50%)",
@@ -353,7 +353,7 @@ export const mockBarData = [
   },
   {
     country: "Reyan G",
-    "HIIT": 133,
+    HIIT: 133,
     "hot dogColor": "hsl(257, 70%, 50%)",
     "Weight Training": 52,
     burgerColor: "hsl(326, 70%, 50%)",
@@ -364,7 +364,7 @@ export const mockBarData = [
   },
   {
     country: "Audit J",
-    "HIIT": 81,
+    HIIT: 81,
     "hot dogColor": "hsl(190, 70%, 50%)",
     "Weight Training": 80,
     burgerColor: "hsl(325, 70%, 50%)",
@@ -375,9 +375,9 @@ export const mockBarData = [
   },
   {
     country: "Mila",
-    "HIIT": 66,
+    HIIT: 66,
     "hot dogColor": "hsl(208, 70%, 50%)",
-    "Weight Training" :111,
+    "Weight Training": 111,
     burgerColor: "hsl(334, 70%, 50%)",
     Pilates: 167,
     kebabColor: "hsl(182, 70%, 50%)",
@@ -386,9 +386,9 @@ export const mockBarData = [
   },
   {
     country: "Keaton",
-    "HIIT": 80,
+    HIIT: 80,
     "hot dogColor": "hsl(87, 70%, 50%)",
-    "Weight Training" :47,
+    "Weight Training": 47,
     burgerColor: "hsl(141, 70%, 50%)",
     Pilates: 158,
     kebabColor: "hsl(224, 70%, 50%)",
