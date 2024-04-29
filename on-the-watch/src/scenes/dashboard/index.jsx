@@ -11,7 +11,8 @@ import LineChart from "../../components/LineChart";
 import BarChart from "../../components/BarChart";
 import StatBox from "../../components/StatBox";
 import ProgressCircle from "../../components/ProgressCircle";
-import './index.css'
+import "./index.css";
+import Scheduled from "../../components/Scheduled";
 
 const Dashboard = () => {
   const theme = useTheme();
@@ -20,7 +21,12 @@ const Dashboard = () => {
   return (
     <Box m="20px">
       {/* HEADER */}
-      <Box display="flex" justifyContent="space-between" alignItems="center">
+      <Box
+        display="flex"
+        justifyContent="space-between"
+        alignItems="center"
+        marginBottom="0px"
+      >
         <Header title="DASHBOARD" subtitle="Welcome to your dashboard" />
 
         <Box>
@@ -44,7 +50,7 @@ const Dashboard = () => {
         display="grid"
         gridTemplateColumns="repeat(12, 1fr)"
         gridAutoRows="140px"
-        gap="20px"
+        gap="10px"
       >
         {/* ROW 1 */}
         <Box
@@ -53,7 +59,7 @@ const Dashboard = () => {
           display="flex"
           alignItems="center"
           justifyContent="center"
-          >
+        >
           <StatBox
             title="75"
             subtitle="Customer Progress"
@@ -116,13 +122,13 @@ const Dashboard = () => {
         >
           <StatBox
             title="130"
-            subtitle ="Inbox"
+            subtitle="Inbox"
             progress="0.80"
             increase="+43%"
             icon={
               <EmailIcon
-              sx={{ color: colors.greenAccent[300], fontSize: "26px" }}
-              className="icon"
+                sx={{ color: colors.greenAccent[300], fontSize: "26px" }}
+                className="icon"
               />
             }
           />
@@ -196,7 +202,7 @@ const Dashboard = () => {
               borderBottom={`4px solid ${colors.primary[500]}`}
               p="15px"
             >
-              <Box>
+              <Box flex="1">
                 <Typography
                   color={colors.greenAccent[500]}
                   variant="h5"
@@ -208,7 +214,9 @@ const Dashboard = () => {
                   {transaction.user}
                 </Typography>
               </Box>
-              <Box color={colors.grey[100]}>{transaction.date}</Box>
+              <Box flex="1" color={colors.grey[100]}>
+                {transaction.date}
+              </Box>
               <Box
                 backgroundColor={colors.greenAccent[500]}
                 p="5px 10px"
@@ -217,7 +225,41 @@ const Dashboard = () => {
                 {transaction.cost}
               </Box>
             </Box>
-          ))} 
+          ))}
+        </Box>
+        {/* ROW 3 */}
+        <Box gridColumn="span 12" backgroundColor={colors.primary[400]}>
+          <Box
+            display="flex"
+            justifyContent="space-between"
+            alignItems="center"
+            colors={colors.grey[100]}
+            p="15px"
+          >
+            <Typography color={colors.grey[100]} variant="h5" fontWeight="600">
+              Scheduled
+            </Typography>
+          </Box>
+          <Box
+            gridColumn="span 12"
+            backgroundColor={colors.primary[400]}
+            display="flex"
+            alignItems="space-evenly"
+            justifyContent="left"
+          >
+            <Box
+              gridColumn="span 6"
+              backgroundColor={colors.primary[400]}
+              marginRight="15px"
+              marginLeft="15px"
+              marginBottom="15px"
+            >
+              <Scheduled />
+            </Box>
+            <Box gridColumn="span 6" backgroundColor={colors.primary[400]}>
+              <Scheduled />
+            </Box>
+          </Box>
         </Box>
       </Box>
     </Box>

@@ -63,7 +63,7 @@ const ClientDetails = () => {
         gridAutoRows="140px"
         gap="10px"
         height="100vh" // Set height to 100vh
-        sx={{ marginLeft: "25px" }}
+        sx={{ marginLeft: "25px", overflowY: "hidden" }}
       >
         {/* Return button to clients page */}
         {/* <Box gridColumn="span 3">
@@ -287,7 +287,9 @@ const ClientDetails = () => {
                 Scheduled Training
               </Typography>
             </Box>
-            <Calendar />
+            <Box>
+              <Calendar vh_height={50} />
+            </Box>
           </Box>
         </Box>
       </Box>

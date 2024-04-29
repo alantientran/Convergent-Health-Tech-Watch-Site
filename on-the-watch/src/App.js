@@ -30,7 +30,7 @@ function App() {
               <Route path="/form" element={<Form />} />
               <Route path="/bar" element={<Bar />} />
               <Route path="/line" element={<Line />} />
-              <Route path="/calendar" element={<Calendar />} />
+              <Route path="/calendar" element={<Calendar vh_height={60} />} />
               <Route path="/pie" element={<Pie />} />
               <Route path="/person/:id" element={<ClientDetails />} />
               {/* Dynamic route for person details */}

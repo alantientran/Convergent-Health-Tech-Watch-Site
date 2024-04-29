@@ -17,7 +17,7 @@ import {
 import Header from "../../components/Header";
 import { tokens } from "../../theme";
 
-const Calendar = () => {
+const Calendar = ({ vh_height }) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const [currentEvents, setCurrentEvents] = useState([]);
@@ -70,7 +70,7 @@ const Calendar = () => {
         {/* CALENDAR */}
         <Box flex="1 1 100%" ml="15px">
           <FullCalendar
-            height="49vh"
+            height={`${vh_height}vh`}
             plugins={[
               dayGridPlugin,
               timeGridPlugin,

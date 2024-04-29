@@ -123,7 +123,7 @@ const Sidebar = () => {
                   color={colors.greenAccent[300]}
                   fontWeight={"bold"}
                 >
-                  Client
+                  Trainer
                 </Typography>
               </Box>
             </Box>
@@ -137,8 +137,6 @@ const Sidebar = () => {
               selected={selected}
               setSelected={setSelected}
             />
-
-
             <Item
               title="Clients"
               to="/clients"
