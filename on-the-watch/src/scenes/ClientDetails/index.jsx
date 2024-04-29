@@ -128,7 +128,7 @@ const ClientDetails = () => {
             </Box>
           </Box>
         </Box>
-        <Box gridColumn="span 5">
+        <Box gridColumn="span 4">
           {/* Content for the second column */}
           <Box
             // backgroundColor={colors.primary[400]}
@@ -250,7 +250,7 @@ const ClientDetails = () => {
             </Box>
           </Box>
         </Box>
-        <Box gridColumn="span 4">
+        <Box gridColumn="span 5">
           {/* Content for the third column */}
           <Box
             // backgroundColor={colors.primary[400]}
