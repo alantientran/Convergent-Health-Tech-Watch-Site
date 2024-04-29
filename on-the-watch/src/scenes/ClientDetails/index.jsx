@@ -19,10 +19,10 @@ import ContactDetails from "../../components/ContactDetails";
 import Age from "../../components/Age";
 import Pronouns from "../../components/Pronouns";
 import Calendar from "../calendar";
-import BedIcon from '@mui/icons-material/Bed';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import DirectionsWalkIcon from '@mui/icons-material/DirectionsWalk';
-import LocalFireDepartmentIcon from '@mui/icons-material/LocalFireDepartment';
+import BedIcon from "@mui/icons-material/Bed";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import DirectionsWalkIcon from "@mui/icons-material/DirectionsWalk";
+import LocalFireDepartmentIcon from "@mui/icons-material/LocalFireDepartment";
 
 const ClientDetails = () => {
   const location = useLocation();
@@ -41,7 +41,6 @@ const ClientDetails = () => {
   }
   const firstName = personDetails.name.split(" ")[0];
   const { phone, email, birthday } = personDetails;
-  
 
   // Render person's details
   return (
@@ -133,14 +132,14 @@ const ClientDetails = () => {
             flexDirection="column"
             alignItems="flex-start"
             justifyContent="center"
-            sx={{ padding: "10px" }}
+            sx={{ padding: "10px", marginLeft: "5px", marginRight: "5px" }}
           >
             <Box mb="10px">
               <Typography
                 variant="h2"
                 color={colors.grey[100]}
                 fontWeight="bold"
-                sx={{ m: 0 }}
+                sx={{ m: 0, marginLeft: "15px" }}
               >
                 Fitness Stats
               </Typography>
@@ -174,7 +173,7 @@ const ClientDetails = () => {
               <Box gridColumn="span 12">
                 <StatBox
                   title="68 BPM"
-                  subtitle= {
+                  subtitle={
                     <span>
                       Average Heart <br /> Rate
                     </span>

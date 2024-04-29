@@ -66,7 +66,7 @@ const Calendar = () => {
     <Box margin="0px">
       {/* <Header title="CALENDAR" /> */}
       {/* <Header title="CALENDAR" subtitle="Full Calendar Interactive Page" /> */}
-      <Box display="flex" flexDirection = "column" justifyContent="space-between">
+      <Box display="flex" flexDirection="column" justifyContent="space-between">
         {/* CALENDAR */}
         <Box flex="1 1 100%" ml="15px">
           <FullCalendar
@@ -78,11 +78,11 @@ const Calendar = () => {
               listPlugin,
             ]}
             headerToolbar={{
-              left: "prev,next today",
+              left: "prev,next,today",
               center: "title",
               right: "dayGridMonth,timeGridWeek,timeGridDay,listMonth",
             }}
-            initialView="dayGridWeek"
+            initialView="timeGridWeek"
             editable={true}
             selectable={true}
             selectMirror={true}
@@ -100,14 +100,13 @@ const Calendar = () => {
           borderRadius="4px"
           marginTop={"30px"}
           marginLeft={"13px"}
-          
         >
           <Typography variant="h5">Events</Typography>
           <List
             sx={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fill, minmax(100px, 1fr))', // Create grid columns with a minimum width of 150px
-              gap: '5px', // Adjust gap between items
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fill, minmax(100px, 1fr))", // Create grid columns with a minimum width of 150px
+              gap: "5px", // Adjust gap between items
             }}
           >
             {currentEvents.map((event) => (
