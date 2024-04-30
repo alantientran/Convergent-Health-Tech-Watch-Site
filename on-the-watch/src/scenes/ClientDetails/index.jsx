@@ -23,8 +23,39 @@ import BedIcon from "@mui/icons-material/Bed";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import DirectionsWalkIcon from "@mui/icons-material/DirectionsWalk";
 import LocalFireDepartmentIcon from "@mui/icons-material/LocalFireDepartment";
+import {db, auth} from './firebaseConfig';
+import {collection, doc, updateDoc, setDoc, addDoc, getDoc} from 'firebase/firestore';
+import {useState, useEffect} from 'react';
 
 const ClientDetails = () => {
+  const [healthData, setHealthData] = useState(null);
+
+  useEffect(() => {
+    const fetchHealthData = async () => {
+      try {
+        const healthDataRef = doc(db, "healthData", "user_one");
+        const docSnap = await getDoc(healthDataRef);
+        if (docSnap.exists) {
+          const data = docSnap.data();
+          console.log("Doc data: ", data.heartRate);
+          //const fieldValue = data[fieldName]; 
+          setHealthData(data);
+        } else {
+          console.log('No such document!');
+        }
+      } catch (error) {
+        console.error('Error fetching health data:', error);
+      }
+    };
+
+    fetchHealthData();
+
+    // Clean up
+    return () => {
+      // Any cleanup code goes here
+    };
+  }, []);
+
   const location = useLocation();
   const { id } = useParams(); // Access the person's ID from URL parameters
 
@@ -36,7 +67,7 @@ const ClientDetails = () => {
     (client) => client.id === parseInt(id)
   );
 
-  if (!personDetails) {
+  if (!personDetails || !healthData) {
     return <div>Loading...</div>; // Handle case where personDetails is not available yet
   }
   const firstName = personDetails.name.split(" ")[0];
@@ -172,7 +203,7 @@ const ClientDetails = () => {
             >
               <Box gridColumn="span 12">
                 <StatBox
-                  title="68 BPM"
+                  title = {healthData.heartRate}
                   subtitle={
                     <span>
                       Average Heart <br /> Rate
@@ -194,7 +225,7 @@ const ClientDetails = () => {
               </Box>
               <Box gridColumn="span 12">
                 <StatBox
-                  title="5,610 Steps"
+                  title= {healthData.steps}
                   subtitle="Today's Steps"
                   progress="0.56"
                   increase="+14%"
@@ -212,7 +243,7 @@ const ClientDetails = () => {
               </Box>
               <Box gridColumn="span 12">
                 <StatBox
-                  title="7 hr 35 min"
+                  title={healthData.hoursSlept}
                   subtitle="Hours Slept"
                   progress="0.75"
                   increase="+14%"
@@ -230,7 +261,7 @@ const ClientDetails = () => {
               </Box>
               <Box gridColumn="span 12">
                 <StatBox
-                  title="353 Calories"
+                  title={healthData.activeCaloriesBurned}
                   subtitle="Calories Burned"
                   progress="0.8825"
                   increase="+14%"
@@ -248,12 +279,12 @@ const ClientDetails = () => {
               </Box>
               <Box gridColumn="span 12">
                 <StatBox
-                  title="12,361"
+                  title={healthData.weeklyAverageSteps}
                   subtitle="Daily Average Steps"
                   progress="0.75"
                   increase="+14%"
                   icon={
-                    <EmailIcon
+                    <DirectionsWalkIcon
                       sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
                     />
                   }
