@@ -239,8 +239,7 @@ const Dashboard = () => {
               Scheduled
             </Typography>
           </Box>
-          <Box
-            gridColumn="span 12"
+          <Box gridColumn="span 4"
             backgroundColor={colors.primary[400]}
             display="flex"
             alignItems="space-evenly"
